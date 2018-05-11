@@ -1,3 +1,7 @@
+# オリジナルからの変更点
+* DialogFlow v2 に対応しました。
+
+
 
 # Microsoft のサーバーレスのサービス Azure Functions (C#) を使って Google Home 対応アプリ「筋肉ボイス」
 
