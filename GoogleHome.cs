@@ -30,7 +30,6 @@ namespace ChomadoVoice
 
                 // VoiceText Web API に投げる処理
                 var key = ConfigurationManager.AppSettings.Get("VoiceTextAPIKey");
-                log.Info("key: " + key);
                 var voiceTextClient = new VoiceTextClient
                 {
                     APIKey = key,
@@ -50,14 +49,7 @@ namespace ChomadoVoice
 
                 var response =
                     "{" +
-                    "  \"fulfillmentText\": " + $"\"<speak><audio src='{mp3Url}' /></speak>\"," +
-                    "\"payload\": {" +
-                    "  \"google\": {" +
-                    "  \"expectUserResponse\": true," +
-                    "  \"isSsml\": true," +
-                    "  \"speech\": " + $"\"<speak><audio src='{mp3Url}' /></speak>\"" +
-                    "  }" +
-                    "}" +
+                    "  \"fulfillmentText\": " + $"\"<speak><audio src='{mp3Url}' /></speak>\"" +
                     "}";
                 log.Info("Res: " + response);
                 var result = req.CreateResponse(HttpStatusCode.OK, response);
